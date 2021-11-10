@@ -18,6 +18,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
+         .package(url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.12.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -25,7 +26,7 @@ let package = Package(
         .target(name: "StorylyTargets",
             dependencies: [
                 .target(name: "Storyly"),
-                .target(name: "SDWebImage"),
+                "SDWebImage",
             ],
             path: "Sources"
         ),
@@ -33,11 +34,6 @@ let package = Package(
             name: "Storyly",
             url: "https://prod-storyly-media.s3-eu-west-1.amazonaws.com/storyly-sdk/1.17.3/Storyly.zip",
             checksum: "69d457ba4a9bc461350360072dc59fbed0d2c50628bfed739ba87d4cddfd9299"
-        ),
-        .binaryTarget(
-            name: "SDWebImage",
-            url: "https://prod-storyly-media.s3.eu-west-1.amazonaws.com/storyly-sdk/SDWebImage/SDWebImage-5.12.1.zip",
-            checksum: "ba4cfc9e75af00e37577be2f7d23cadbb7293a818e02024509659119d75156ec"
         )
     ]
 )
